@@ -1,0 +1,87 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <link rel="stylesheet" href="{% static 'task.css' %}">
+</head>
+<body>
+    <div>
+    </div>
+    <div class="container">
+        <h2>To Do App</h2>
+        <form method="POST" action="{% url 'add_task' %}">
+            {% csrf_token %}
+            <input type="text" id="title" name="title" placeholder="Enter a task here" required>
+            <input type="date" id="due_date" name="due_date" required>
+            <button type="submit">SAVE</button><br>
+        </form>
+        <div class="control">
+            <div class="entris">
+                <label for="show_entris">show</label>
+                <select name="show_entris" id="show_entris">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <span>Others</span>
+                
+            </div>
+            <div class="search-container">
+                <label for="text" id='search'>search:</label>
+                <input type="text" name="saerch" "btn-md">
+                
+
+            </div>
+            
+
+        </div>
+
+        
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Todo item</th>
+                    <th>Status</th>
+                    <th>Due</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.status }}</td>
+                    <td>{{ task.due_date }}</td>
+                    <td>
+                        <a href="{% url 'edit_task' task.id %}" class="edit-btn">EDIT</a>
+
+                        <a href="{% url 'delete_task' task.id %}" class="delete-btn">DELETE</a>
+                        <a href="{% url 'mark_finished' task.id %}" class="finished-btn">FINISHED</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="pagination-container">
+            <div class="entries-info">Showing 1 to 2 of 2 entries</div>
+            <div class="pagination">
+                <button class="prev-btn" disabled>Previous</button>
+                <input type="text" class="page-number" value="1" disabled>
+                <button class="next-btn" disabled>Next</button>
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock content %}

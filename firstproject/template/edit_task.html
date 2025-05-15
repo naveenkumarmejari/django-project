@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="{% static "edit_task.css" %}">
+</head>
+<body>
+
+    <h2>Edit Task</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label>Task Title:</label>
+        <input type="text" name="title" value="{{ task.title }}" required><br><br>
+
+        <label>Due Date:</label>
+        <input type="date" name="due_date" value="{{ task.due_date|date:'Y-m-d' }}" required><br><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <a href="{% url 'task_details' %}">Back to To-Do List</a>
+
+</body>
+</html>

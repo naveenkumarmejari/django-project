@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    button {
+      position: relative;
+      padding: 5px 10px;
+      background: #7dcff5;
+      color: #e3f8ff;
+      border: none;
+      border-radius: 12px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .box {
+      background-color: #f0f8ff;
+      border: 2px solid #7dcff5;
+      padding: 20px;
+      border-radius: 15px;
+      width: fit-content;
+      margin: 50px auto;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.50);
+    }
+
+    h1 {
+      text-align: center;
+      color: #5589fa;
+    }
+    a {
+      text-decoration: none;
+      color:rgb(244, 242, 245); 
+      background: #7dcff5;
+      padding: 5px 10px;
+      border-radius: 15px;
+      display: inline-block;
+      margin: 5px;
+      font-family:
+    }
+  </style>
+</head>
+<body>
+  <h1>WELCOME 🖐️</h1>
+  <div class="box">
+    {% comment %} <button href="{% url "signup" %}">SIGNUP</button> {% endcomment %}
+    <a href="{% url "signup" %}">SIGN UP</a>
+    {% comment %} <button>SIGNIN</button> {% endcomment %}
+    <a href="{% url "signin" %}">SIGN IN</a>
+  </div>
+</body>
+</html>
