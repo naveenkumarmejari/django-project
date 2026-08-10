@@ -1,7 +1,16 @@
 # Django Project Name
 
 ## Description
-This is a Django web application project.
+Projects
+Secure Login & User Management System — Python, Django (CURD), MySQL
+• Designed and developed a secure user authentication system with registration, login, and role-based access
+control. fault-tolerant execution.
+• Built 10+ RESTful API endpoints and implemented CRUD operations using Django REST Framework and
+Django ORM.
+• Resolved 20+ functional and backend issues, improving application stability and reducing system errors by
+approximately 30
+• Leveraged AI-assisted development tools for debugging, code suggestions, and documentation, reducing de
+velopment time by approximately 10
 
 ## Technologies Used
 - Python
